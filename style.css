@@ -51,17 +51,6 @@ body {
     color: #da3131;
   }
 
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-
-    .sidenav a {
-      font-size: 18px;
-    }
-  }
-
-  
   .wrapper{
     position: fixed;
     top: 50%;
@@ -121,3 +110,219 @@ body {
     border: 3px solid #8000ff;
     right: -25%;
   }
+
+  /* Modal Style */
+  .dialogContainer{
+    margin: 150px auto;
+    font-family: sans-serif;
+  }
+  
+dialog{
+  display: none;
+  border: 1px ridge lightblue;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  position: relative;
+  width: 50%;
+}
+
+dialog .close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding:  15px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+dialog .close:hover{
+  color: red;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+dialog .dialog-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: #444;
+  text-transform: capitalize;
+  border-bottom: .5px ridge lightblue;    
+  padding-bottom: 15px;
+}
+
+dialog .dialog-header h1{
+  margin: 0;
+  padding: 0;
+}
+
+dialog .dialog-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-content-img{
+  position: relative;
+  display: flex;
+  align-items: center;
+
+ 
+}
+
+.dialog-content-img-date{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  font-size: 14px;
+  color: #777;
+  font-weight: bold;
+}
+
+.dialog-content-img img{
+  width: 20%;
+  overflow: hidden;
+  padding-right: 15px;
+}
+
+.dialog-content-img .dialog-content-img-name{
+  color: #444;
+
+}
+
+.dialog-content-text p{
+  color: #777;
+  line-height: 30px;
+  word-spacing: 3px;
+}
+
+dialog .dialog-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: .5px ridge lightblue;
+  padding: 10px;
+}
+
+dialog .dialog-footer .dialog-footer-btn{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+button{
+border: none;
+padding: 10px 15px;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.dialog-footer-btn-save{
+  background-color: rgb(89, 89, 245);
+  color: #fff;
+}
+/* .dialog-footer-btn-save:focus, */
+.dialog-footer-btn-save:hover{
+  background-color: #fff;
+  color: rgb(89, 89, 245);;
+  border: 1px solid  rgb(89, 89, 245);
+}
+.dialog-footer-btn-cancel{
+  background-color: rgb(252, 35, 35);
+  color: #fff;
+}
+
+.dialog-footer-btn-cancel:hover{
+  color: rgb(252, 35, 35);
+  border: 1px solid rgb(252, 35, 35);
+  background-color: #fff;
+}
+
+.dialog-content-text .form-group{
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
+  
+}
+.dialog-content-text .form-group label{
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  padding-right: 8px;
+
+}
+
+.dialog-content-text .form-group input{
+  padding: 10px 15px;
+  width: 40%;
+  border-radius: 5px;
+  border: 1px ridge #000;
+  outline: none;
+  border-bottom: 2px ridge lightblue;
+}
+
+
+  /* Modal Style End */
+
+
+
+/* Responsive Design */
+  @media screen and (max-width:900px){
+    body {
+        background-color: rgb(128, 26, 0);
+        margin: 50px 20px;
+      }
+      .dialogContainer{
+        margin: 50px 10px;
+      }
+
+    dialog{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    body {
+      background-color: olive;
+      margin: 50px 10px;
+   
+    }
+    .dialogContainer{
+      margin: 50px 10px;
+    }
+    dialog{
+        width: 90%;
+    }
+  }
+
+  @media screen and (max-height: 450px) {
+    .dialog-content-img-date{
+      display: none;
+  }
+
+  .dialog-content-text .form-group label{
+      display: none;
+  }
+
+  .dialog-content-text .form-group input{
+      width: 90%;
+  }
+
+
+  .dialog-footer{
+      display: flex;
+      flex-direction: column-reverse;
+  }
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+
+  
+  }
+
+  
+  

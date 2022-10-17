@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+<!-- side Bar start -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">About</a>
@@ -16,7 +16,9 @@
     <a href="#">Contact</a>
   </div>
 
-  <div class="wrapper">
+  <button class="showSidebar"  onclick="openNav()">show sidebar</button>
+
+  <!-- <div class="wrapper">
     <div class="link_wrapper">
       <a href="#" id="button" onclick="openNav()">CLick Me!</a>
       <div class="icon">
@@ -24,9 +26,73 @@
           <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
         </svg>
       </div>
-    </div>
+    </div> -->
+  <!-- Sidebar End -->
+
+  <!-- Modal Start -->
+  <div class="dialogContainer">
+    <button id="updateDetails" class="updateDetails">Update Details</button>
+  <!-- Simple Dialog  -->
+  <dialog open="open" id="modal">
+      <div class="dialog-header">
+           <span class="close">&times;</span>
+           <h1>This is a dialog box header</h1>
+       </div>
+       <div class="dialog-content">
+           <div class="dialog-content-img">
+               <img src="img/cars1.jpg" alt="">
+               <h4 class="dialog-content-img-name">Classic Car Yellow</h4>
+               <p class="dialog-content-img-date">22-10-12</p>
+           </div>
+           
+           <div class="dialog-content-text">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex, dolorum, omnis, praesentium dicta ad pariatur aliquid enim error repellendus facere laboriosam reprehenderit aperiam aspernatur quia provident optio qui delectus.</p>
+               <div class="form-group">
+                   <label for="message">Write Your reply</label>
+                   <input type="text" id="message" placeholder="Your Message...">
+               </div>
+               
+           </div>
+           
+       </div>
+       <div class="dialog-footer">
+           <p>this dialog box made by <b><i>ARQ</i> </b> &copy;2022</p> 
+           <div class="dialog-footer-btn">
+               <button value="default" class="dialog-footer-btn-save">Save</button>
+               <button value="cancel" class="dialog-footer-btn-cancel">Cancel</button>
+           </div>
+       </div>
+  </dialog>
+  </div>
+  <!-- Modal End -->
   
   <script>
+    const showModal= document.getElementById('updateDetails');
+const modal= document.getElementById('modal');
+const closeBtn = document.querySelector('.close');
+const cancelBtn = document.querySelector('.dialog-footer-btn-cancel');
+
+
+showModal.onclick=function(){
+    modal.style.display='block';
+}
+
+closeBtn.onclick=function(){
+    modal.style.display='none'
+}
+
+cancelBtn.onclick=function(){
+    modal.style.display='none'
+}
+
+
+window.addEventListener('click', function(event){
+    if(event.target==modal){
+        modal.style.display='none'
+    }
+})
+
+
     function openNav() {
       document.getElementById("mySidenav").classList.toggle("w300")
     }
